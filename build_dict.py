@@ -102,7 +102,10 @@ def build_dict_from_files(output_file, corpus_files, stopwords_file=None,
     for filename in corpus_files:
         with open(filename, 'r') as doc:
             corpus.append(reader(doc.read()))
+    print corpus
+    print "-" * 90
     corpus = [[w.stem for w in map(stemmer, doc)] for doc in corpus]
+    print corpus
 
     stopwords = None
     if stopwords_file:
