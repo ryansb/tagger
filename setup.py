@@ -1,10 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # -*- coding; utf-8 -*-
 
 from setuptools import setup, find_packages
+from tagger import __version__
 
 setup(name = "tagger",
-        version = 0.5,
+        version = __version__,
         description = "Tagger framework",
         long_description="Module for extracting tags from text documents.",
         author = "Alessandro Presta",
