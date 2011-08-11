@@ -86,13 +86,9 @@ Example::
 
 import collections
 try:
-    from collections import Countersss
+    from collections import Counter
 except ImportError:
-    #from tagger.utils import Counter
-    #import tagger.utils
-    #Counter = tagger.Counter
-    import tagger.utils
-    #from newsclassify.utils import Counter
+    from tagger.utils import Counter
 import re
 
 
