@@ -85,6 +85,10 @@ Example::
 from __future__ import division
 
 import collections
+try:
+    from collections import Counter
+except ImportError:
+    from newsclassify.utils import Counter
 import re
 
 
@@ -349,7 +353,7 @@ class Rater:
                 proper[t] += 1
                 ratings[t] = max(ratings[t], t.rating)
 
-        term_count = collections.Counter(multitags)
+        term_count = Counter(multitags)
 
         for t, cnt in term_count.iteritems():
             t.string = clusters[t].most_common(1)[0][0]
@@ -381,7 +385,7 @@ class Rater:
         @param tags: a list of tags to be assigned a rating
         '''
 
-        term_count = collections.Counter(tags)
+        term_count = Counter(tags)
 
         for t in tags:
             # rating of a single tag is term frequency * weight
